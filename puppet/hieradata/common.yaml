@@ -1,0 +1,7 @@
+---
+#classes:
+#  - configs::postgresql
+#  - redis
+#
+#redis::conf_bind: '127.0.0.1'
+#redis::system_sysctl: true
