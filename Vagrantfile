@@ -28,6 +28,14 @@ Vagrant.configure(2) do |config|
       vb.cpus = 2
   end
 
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+#    config.cache.synced_folder_opts = {
+#      type: :nfs,
+#      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+#    }
+  end
+
   config.vm.provision "shell", inline: $shell_puppetinstall
   config.vm.provision "puppet" do |puppet|
       puppet.manifests_path = ["vm", "/vagrant/puppet/manifests"]
