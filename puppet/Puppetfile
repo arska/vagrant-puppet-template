@@ -1,7 +1,4 @@
 forge "http://forge.puppetlabs.com"
 
-# official puppetlabs modules
-mod 'puppetlabs/apt', '1.7.0'
-mod 'puppetlabs/concat', '1.1.2'
-mod 'puppetlabs/stdlib', '4.5.1'
+mod 'vshn/gitlab'
 

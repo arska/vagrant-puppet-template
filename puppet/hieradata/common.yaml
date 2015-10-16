@@ -1,3 +1,7 @@
 ---
-classes: []
+classes:
+  - gitlab # example: install https://forge.puppetlabs.com/vshn/gitlab
+
+# (required) parameter, after running you can access the URL and login with username "root" and password "5iveL!fe"
+gitlab::external_url: 'http://localhost:8080'
 
