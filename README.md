@@ -1,7 +1,7 @@
 vagrant-puppet-template
 =======================
 
-Basic empty Vagrant environment for local puppet apply
+Basic empty Vagrant environment for local puppet apply testing/development
 
 Includes librarian-puppet and hiera
 
