@@ -5,7 +5,7 @@ Basic empty Vagrant environment for local puppet apply testing/development
 
 Includes librarian-puppet and hiera
 
-Based on work by Andre Keller (https://github.com/andrekeller)
+Based on (yet unpublished) work by Andre Keller (https://github.com/andrekeller)
 
 Usage:
 ------
