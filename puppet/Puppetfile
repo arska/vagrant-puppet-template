@@ -1,4 +1,7 @@
 forge "http://forge.puppetlabs.com"
 
-mod 'vshn/gitlab'
+mod 'puppetlabs/mysql'
+mod 'jfryman/nginx'
+mod 'mayflower/php'
+mod 'vamsee/solr'
 

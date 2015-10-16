@@ -9,7 +9,7 @@ if [ ! -f /usr/bin/librarian-puppet ] ; then
   export DEBIAN_FRONTEND="noninteractive"
   sudo -E apt-get -y update
   #sudo -E apt-get -y upgrade
-  sudo -E apt-get -y install puppet librarian-puppet git
+  sudo -E apt-get -y install puppet librarian-puppet git software-properties-common
   #sudo -E apt-get -y autoremove
   #sudo -E apt-get -y clean
 fi

@@ -1,7 +1,41 @@
 ---
 classes:
-  - gitlab # example: install https://forge.puppetlabs.com/vshn/gitlab
+  - nginx
+  - mysql::server
+  - php
 
-# (required) parameter, after running you can access the URL and login with username "root" and password "5iveL!fe"
-gitlab::external_url: 'http://localhost:8080'
+nginx::nginx_vhosts:
+  'localhost':
+    proxy: 'http://php'
 
+nginx::nginx_upstreams:
+  'php':
+    ensure: present
+    members:
+      - 127.0.0.1:9000
+
+php::settings:
+  Date/date.timezone: Europe/Berlin
+php::cli::settings:
+  PHP/memory_limit: 512M
+php::fpm::settings:
+  PHP/short_open_tag: 'On'
+php::extensions:
+  json: {}
+  mysql: {}
+  memcached:
+    provider: pecl
+    header_packages:
+      - libmemcached-dev
+  apc:
+    package_prefix: php-
+    settings:
+      apc.stat: 1
+      apc.stat_ctime: 1
+  mcrypt: {}
+  gd: {}
+  curl: {}
+php::fpm::pools:
+  www:
+    listen: 127.0.0.1:9000
+    chdir: '/var/www/'
