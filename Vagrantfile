@@ -13,6 +13,10 @@ if [ ! -f /usr/bin/librarian-puppet ] ; then
   #sudo -E apt-get -y autoremove
   #sudo -E apt-get -y clean
 fi
+echo "copying data/ to /var/www/"
+sudo mkdir -p /var/www/
+sudo cp -r /vagrant/data/* /var/www/
+sudo chown -R www-data:www-data /var/www/
 echo "running librarian-puppet"
 sudo cp /vagrant/puppet/Puppetfile /etc/puppet
 sudo bash -c "cd /etc/puppet ; librarian-puppet install --verbose"
@@ -42,6 +46,7 @@ Vagrant.configure(2) do |config|
 
   # forward ports from the local machine, add more if needed
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true # http://localhost:8080/
+  config.vm.network "forwarded_port", guest: 80, host: 80, auto_correct: true # http://localhost:8080/
   config.vm.network "forwarded_port", guest: 443, host: 8443, auto_correct: true # https://localhost:8443/
 
   # here the shell script at the top is executed

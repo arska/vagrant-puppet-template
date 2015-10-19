@@ -3,5 +3,10 @@ forge "http://forge.puppetlabs.com"
 mod 'puppetlabs/mysql'
 mod 'jfryman/nginx'
 mod 'mayflower/php'
-mod 'vamsee/solr'
-
+# mod 'vamsee/solr'
+# mod 'fsalum/redis', '1.0.3'
+mod 'saz/memcached'
+mod 'varnish',
+	:git => 'https://github.com/maxchk/puppet-varnish.git'
+mod 'n98magerun',
+	:git => 'https://github.com/cmuench/puppet-n98magerun.git'
